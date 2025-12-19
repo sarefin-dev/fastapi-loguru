@@ -10,6 +10,10 @@ class AppSettings(BaseSettings):
     environment: str = "Development"
     debug: bool = True
 
+    # Logging
+    log_level: str = "INFO"
+    log_dir: str = "logs"
+
     model_config = SettingsConfigDict(env_file=".env", case_sensitive=False)
 
 

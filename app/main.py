@@ -1,7 +1,18 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
+from app.core.config import get_settings
 
 
-app = FastAPI()
+@asynccontextmanager
+async def lifespan(_: FastAPI):
+    settings = get_settings()
+    print(settings.app_name)
+    yield
+
+
+app = FastAPI(
+    lifespan=lifespan
+)
 
 
 @app.get("/")

@@ -217,3 +217,5 @@ db.sqlite3-journal
 !/alembic.ini
 !/alembic/versions
 
+# log
+logs
